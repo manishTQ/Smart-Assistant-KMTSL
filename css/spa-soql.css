@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────────────────────────────── *
+ *  Smart Assistant v9 — SOQL Tab Styles
+ * ─────────────────────────────────────────────────────────────────────────── */
+.kp-exec {
+  display:flex;flex-direction:column;gap:5px;
+  padding:8px;flex:1;overflow:hidden;
+}
+.soql-toolbar {
+  display:flex;gap:4px;align-items:center;
+  flex-wrap:wrap;padding-bottom:4px;
+  border-bottom:1px solid var(--border);
+}
+.soql-select {
+  border:1px solid var(--border);background:var(--bg-input);
+  color:var(--text-primary);padding:3px 7px;
+  border-radius:5px;font-size:10px;outline:none;cursor:pointer;
+}
+.soql-date-row {
+  display:flex;gap:3px;flex-wrap:wrap;
+  align-items:center;padding:4px 0;
+}
+.soql-date-label {
+  font-size:9px;font-weight:600;
+  color:var(--text-muted);white-space:nowrap;
+}
+.soql-date-chip {
+  border:1px solid var(--border);background:var(--bg-card);
+  color:var(--text-secondary);padding:2px 7px;
+  border-radius:10px;font-size:9px;cursor:pointer;
+  font-family:inherit;white-space:nowrap;
+  transition:all 0.15s;
+}
+.soql-date-chip:hover {
+  background:rgba(59,130,246,0.10);
+  border-color:rgba(59,130,246,0.3);
+  color:var(--accent);
+}
+#soql-result-area {
+  flex:1;overflow-y:auto;min-height:60px;
+}
