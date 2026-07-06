@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Productivity Assistant v2",
+  "version": "9.0.0",
+  "description": "AI-powered daily workflow companion — Tasks, Queries, Code & Git without switching tabs.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://*.salesforce.com/*",
+    "https://*.lightning.force.com/*",
+    "https://*.my.salesforce.com/*",
+    "https://*.sandbox.lightning.force.com/*",
+    "https://*.force.com/*",
+    "https://api.groq.com/*",
+    "https://api.github.com/*",
+    "https://api.monday.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.salesforce.com/*",
+        "https://*.lightning.force.com/*",
+        "https://*.my.salesforce.com/*",
+        "https://*.sandbox.lightning.force.com/*",
+        "https://*.force.com/*"
+      ],
+      "css": [
+        "css/spa-base.css",
+        "css/spa-chat.css",
+        "css/spa-monday.css",
+        "css/spa-soql.css",
+        "css/spa-git.css",
+        "css/spa-settings.css"
+      ],
+      "js": [
+        "js/spa-speech.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Smart Productivity Assistant v9"
+  }
+}
